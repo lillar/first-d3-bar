@@ -23,8 +23,8 @@ const data = [
   { country: "New Zealand", students: 3, continent: "Oceania" },
 ];
 
-const width = 500;
-const height = 340;
+const width = 600;
+const height = 600;
 
 // ── Color scale (shared with Barplot) ────────────────────
 const continents = [...new Set(data.map((d) => d.continent))];
@@ -62,7 +62,7 @@ export const Treemap = ({ data: propData }) => {
   return (
     <div>
       <svg viewBox={`0 0 ${width} ${height}`} width="100%"
-        style={{ display: "block", overflow: "visible", maxWidth: 800, margin: "0 auto" }}>
+        style={{ display: "block", overflow: "visible", maxWidth: 1000, margin: "0 auto" }}>
 
         {/* Continent group backgrounds */}
         {continentNodes.map((node) => (
@@ -79,7 +79,7 @@ export const Treemap = ({ data: propData }) => {
             <text
               x={node.x0 + 6}
               y={node.y0 + 12}
-              fontSize={10}
+              fontSize={9}
               fontWeight={600}
               fill={colorScale(node.data.name)}
               style={{ textTransform: "uppercase", letterSpacing: "0.05em" }}
